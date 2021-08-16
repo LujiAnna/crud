@@ -1,12 +1,12 @@
 <?php
 
 // NEVER commit any real passwords
-// TODO: exclude this file from your Github repository for better security
-// There is a specific technique to ignore files in git, which we've talked about
+// exclude this file from your Github repository for better security
+// technique to ignore files in git: .gitignore
 
 $config = [
-    'host' => '',
-    'user' => '',
-    'password' => '',
-    'dbname' => '',
+    'host' => 'localhost',
+    'user' => 'root',
+    'password' => 'root',
+    'dbname' => 'bird_base',
 ];

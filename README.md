@@ -11,13 +11,32 @@ As a kid, maybe you were collecting things. Sea shells, Pokemon cards, stamps, .
 ## Preparation
 
 - [x] Think of a collection you'd like to have an inventory for: Birds
-- [x] What information is interesting to keep track of for that kind of objects? Common Name, Scientific Name, Local Name, Location Name, Longitude, Latitude, etc ... images,
-- [ ] Prepare the database structure to contain this info, and add some quick dummy content
-- [ ] Have a look at the provided structure (make as much use of it as you can, it will pay off later)
+- [x] What information is interesting to keep track of for that kind of objects?
+  - [x] BIRD: Bird ID (Code), Common Name, Scientific Name, Local Name (aka), etc,
+  - [x] LOCATION: Location Id, Location Name, Longitude, Latitude, etc ... images,
+  - [x] All data is of data type varchar, except lon/lat in integer
+- [x] Prepare the database structure to contain this info, and add some quick dummy content.
+
+  - [x] Database [(schema)](https://en.wikipedia.org/wiki/Database_schema).
+  - [x] GUI [Can use mysql workbench with use of mysl database](https://phoenixnap.com/kb/how-to-create-mysql-database-workbench) or [mySql server](https://www.educative.io/blog/what-are-database-schemas-examples) or phpMyAdmin from MAMP
+  - [x] Connect to MySQL server: phpMyAdmin from MAMP. Can also use smae phpMyAdmin to create db instead of using the GUI-mysqlWorkbench
+    - [x] Create table(s).
+    - [x] Add columns and [Choose their data types: check tooltip](https://stackoverflow.com/questions/3663952/what-do-column-flags-mean-in-mysql-workbench). [read article](https://dev.mysql.com/doc/workbench/en/wb-table-editor-columns-tab.html). [latitude, longitude datatype ? ](https://www.syntaxbook.com/post/3076O3-what-is-the-ideal-data-type-to-use-when-storing-latitude-longitudes-in-a-mysql-database)
+    - [x] Add data to a table
+    - [x] Might need to refresh the (db) schema now and then. Apply after finishing any addition or update.
+
+- [?] Have a look at the provided structure (make as much use of it as you can, it will pay off later)
+
+## How to connect to the db
+
+- [ ] Use class to get db into your project
+- [ ] Query data using File Script or mySQL Shell
 
 ## Step 1: read
 
 - [ ] On the overview page, build an overview of everything in the collection (you will find some provided code that's helpful for this)
+
+-----END OF DAY 1----------
 
 ## Step 2: create
 

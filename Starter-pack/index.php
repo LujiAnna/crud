@@ -13,10 +13,11 @@ require_once 'config.php';
 require_once 'classes/DatabaseManager.php';
 require_once 'classes/CardRepository.php';
 
+// obtain the passed params from array in the config file
 $databaseManager = new DatabaseManager($config['host'], $config['user'], $config['password'], $config['dbname']);
 $databaseManager->connect();
 
-// This example is about a Pokémon card collection
+// This example is about a Bird card collection
 // Update the naming if you'd like to work with another collection
 $cardRepository = new CardRepository($databaseManager);
 $cards = $cardRepository->get();

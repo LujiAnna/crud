@@ -16,6 +16,10 @@ class DatabaseManager
     public function __construct(string $host, string $user, string $password, string $dbname)
     {
         // TODO: Set any user and password information
+        $this->host= $host;
+        $this->user= $user;
+        $this->password= $password;
+        $this->dbname= $dbname;
     }
 
     public function connect()
