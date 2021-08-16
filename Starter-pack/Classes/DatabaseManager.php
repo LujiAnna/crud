@@ -27,7 +27,35 @@ class DatabaseManager
 
     public function connect()
     {
-        // TODO: make the connection to the database
-        $this->connection = null;
+        // make the connection to the database
+        // null will close the db
+        // $conn = null;
+
+        // // Create connection
+        // // The connect() / mysqli_connect() function opens a new connection to the MySQL server. accelerator
+        // Works only for mysql
+        // $conn = new mysqli($host, $user, $password, $dbname);
+
+        // // Check connection
+        // if ($conn->connect_error) {
+        //   die("Connection failed: " . $conn->connect_error);
+        //   }
+
+        // Connect using PDO (PHP Data Objects)
+        // PDO will work on 12 different database systems
+        // PDO is built-in  https://www.phptutorial.net/php-pdo/pdo-connecting-to-mysql/
+          try {
+            //   dsn - database server name
+              $dsn = "mysql:host=$this->host;dbname=$this->dbname";
+              $this->connection = new PDO($dsn, $this->user, $this->password);
+            // set the PDO error mode to exception
+            $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+           // set return type in form of 
+        //   $this->connection->setAttribute(PDO::FETCH_GROUP | PDO::FETCH_ASSOC);
+            echo "Connected successfully";
+          } catch(PDOException $e) {
+            echo "Connection failed: " . $e->getMessage();
+          }
+
     }
 }
