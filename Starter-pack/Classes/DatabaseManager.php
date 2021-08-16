@@ -2,6 +2,8 @@
 
 // This class will manage the connection to the database
 // It will be passed on the other classes who need it
+
+// do we need to extend the config file?
 class DatabaseManager
 {
     // These are private: only this class needs them
@@ -15,11 +17,12 @@ class DatabaseManager
 
     public function __construct(string $host, string $user, string $password, string $dbname)
     {
-        // TODO: Set any user and password information
+        // Set user and password information
         $this->host= $host;
         $this->user= $user;
         $this->password= $password;
         $this->dbname= $dbname;
+
     }
 
     public function connect()
