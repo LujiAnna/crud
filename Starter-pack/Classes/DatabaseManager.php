@@ -25,7 +25,7 @@ class DatabaseManager
 
     }
 
-    public function connect():PDO
+    public function connect():void
     {
         // make the connection to the database
         // null will close the db
@@ -61,7 +61,6 @@ class DatabaseManager
           $this->connection = new PDO($dsn, $this->user, $this->password);
           // set return type in form of associative array
           $this->connection->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-          return $this->connection; 
-
+          $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
 }

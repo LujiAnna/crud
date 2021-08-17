@@ -13,7 +13,7 @@ class CardRepository
         $this->databaseManager = $databaseManager;
     }
 
-    
+
     public function create()
     {
 
@@ -24,8 +24,23 @@ class CardRepository
     // Get one
     public function find()
     {
-
+        // grab this variable from post
+        if (isset($_POST['find'])) {
+        # Check if amount field is 0, empty, or not set at all'
+            if (empty($_POST['bird'])) {
+                echo " <br/> Please write bird name";
+        } else {
+           // TODO: pass this bird name to be found in the db
+               $bird = $_POST['bird'];
+                $sql = "SELECT * FROM birds WHERE comName=\"$bird\"";
+                // var_dump($sql);
+                // use fetch method
+                $result = $this->databaseManager->connection->query($sql)->fetch();
+                var_dump($result);
+                // return $result;
     }
+    }
+}
 
     // Get all
     public function get()
@@ -41,7 +56,8 @@ class CardRepository
         
         // $result = $pdo->query($sql);
         // this dbmgr is one which has the pdo-dsn 
-        $result = $this->databaseManager->connect()->query($sql);
+        // TODO: change
+        $result = $this->databaseManager->connection->query($sql);
         // return [
         //     ['name' => 'bird one'],
         //     ['name' => 'bird two'],

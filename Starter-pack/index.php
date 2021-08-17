@@ -8,6 +8,9 @@ ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
+// We might use session variables so we need to enable sessions
+session_start();
+
 // Load you classes
 require_once 'config.php';
 require_once 'classes/DatabaseManager.php';
@@ -21,6 +24,8 @@ $databaseManager->connect();
 // Update the naming if you'd like to work with another collection
 $cardRepository = new CardRepository($databaseManager);
 $birds = $cardRepository->get();
+$searchResult = $cardRepository->find();
+
 
 // Load your view
 // Tip: you can load this dynamically and based on a variable, if you want to load another view

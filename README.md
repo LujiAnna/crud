@@ -40,11 +40,11 @@ As a kid, maybe you were collecting things. Sea shells, Pokemon cards, stamps, .
 
 ## Step 2: create
 
-- [ ] Build a form that contains all the relevant fields
+- [x] Build a form that contains all the relevant fields
   - [x] Delete unnecessary fields by using tool icon next to table name in mySQL workbench -> Apply changes -> Refresh to reflect changes
   - [?] Action field required
 - [ ] Once the form is submitted, save this info as a new entry in the database
-- [ ] In a real application, you'd validate all of the data. In this case it's optional: focus on the database parts first
+- [!] In a real application, you'd validate all of the data. In this case it's optional: focus on the database parts first
 
 ## Step 3: update
 

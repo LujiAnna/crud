@@ -54,11 +54,36 @@
   <input 
     type="submit" value="Submit Bird">
 </form>
+<!-- TODO: save info as a new entry in the db -->
+
 
 <br><br>
-<input type="text" placeholder="Find..">
 
-<!-- TODO: dave info as a new entry in the db -->
+<!-- add form to find a bird -->
+<form method='post' action=''>
+<!-- grab value from the input field -->
+<input type="text" placeholder="Write Bird's full name" id='bird' name='bird' value="<?= $_SESSION['bird'] ?? '' ?>">
+<!-- <input 
+    type="submit" value="Find"> -->
+    <button type='submit' name='find'>Find!</button>
+</form>
+
+<div>
+    <!-- TODO: Display full bird name  -->
+    <div>
+        <ul>
+    <?php foreach ($searchResult as $result) : ?>
+    <!-- MD array https://stackoverflow.com/questions/6413589/php-foreach-with-multidimensional-array/6413677 -->
+        <li><?= $result ?></li>
+
+    <?php endforeach; ?>
+</ul>
+
+</div>
+</div>
+
+
+
 
 
 </body>
