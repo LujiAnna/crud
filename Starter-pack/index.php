@@ -25,6 +25,7 @@ $databaseManager->connect();
 $cardRepository = new CardRepository($databaseManager);
 $birds = $cardRepository->get();
 $searchResult = $cardRepository->find();
+$addBirdInfo = $cardRepository->create();
 
 
 // Load your view

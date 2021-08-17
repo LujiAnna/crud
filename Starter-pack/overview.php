@@ -51,8 +51,8 @@
   <input type="text" id="locationLon" 
     name="locationLon"><br><br>
 
-  <input 
-    type="submit" value="Submit Bird">
+  <!-- <input type="submit" value="Submit Bird"> -->
+  <button type='submit' name='submit'>Submit bird info</button>
 </form>
 <!-- TODO: save info as a new entry in the db -->
 
@@ -69,12 +69,11 @@
 </form>
 
 <div>
-    <!-- TODO: Display full bird name  -->
+    <!-- Display full bird name  -->
     <div>
         <ul>
         <?php if (isset($_POST['find'])) : ?>
     <?php foreach ($searchResult as $result) : ?>
-    <!-- MD array https://stackoverflow.com/questions/6413589/php-foreach-with-multidimensional-array/6413677 -->
         <li><?= $result ?></li>
     <?php endforeach; ?>
     <?php endif; ?>

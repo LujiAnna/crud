@@ -13,15 +13,38 @@ class CardRepository
         $this->databaseManager = $databaseManager;
     }
 
-
     public function create()
     {
+        // grab this variable from post
+        if (isset($_POST['submit'])) {
+        
+            // pass bird info in the db
+                $comName = $_POST['comName'];
+                $sciName = $_POST['sciName'];
+                $idbird = $_POST['idbird'];
+                $idlocation = $_POST['idlocation'];
+                $locationName = $_POST['locationName'];
+                $locationLat = $_POST['locationLat'];
+                $locationLon = $_POST['locationLon'];
 
+                // insert into two different tables, with 1 common value
+                $sql = "INSERT INTO birds (idbird, comName, sciName, birdRange, idLocation)
+                 VALUES (\"$comName\", \"$sciName\", \"$idbird\", \"$idlocation\")";
+                var_dump($sql);
+                // $result = $this->databaseManager->connection->query($sql);
+                // var_dump($result);
+                // return $result;
+                echo 'OK';
+    
     }
 
-    // Get = read
+}
+
+    // Get = Read
 
     // Get one
+    // read more on fetch mode: https://www.phptutorial.net/php-pdo/php-fetch/
+    // fetch a row from the result set
     public function find()
     {
         // grab this variable from post
@@ -30,7 +53,7 @@ class CardRepository
             if (empty($_POST['bird'])) {
                 echo " <br/> Please write bird name";
         } else {
-           // TODO: pass this bird name to be found in the db
+           // pass this bird name to find its info in the db
                $bird = $_POST['bird'];
                 $sql = "SELECT * FROM birds WHERE comName=\"$bird\"";
                 // var_dump($sql);
