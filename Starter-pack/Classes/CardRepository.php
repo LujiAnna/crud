@@ -36,8 +36,8 @@ class CardRepository
                 // var_dump($sql);
                 // use fetch method
                 $result = $this->databaseManager->connection->query($sql)->fetch();
-                var_dump($result);
-                // return $result;
+                // var_dump($result);
+                return $result;
     }
     }
 }
