@@ -18,7 +18,7 @@ As a kid, maybe you were collecting things. Sea shells, Pokemon cards, stamps, .
 - [x] Prepare the database structure to contain this info, and add some quick dummy content.
 
   - [x] Database [(schema)](https://en.wikipedia.org/wiki/Database_schema).
-  - [x] GUI [Can use mysql workbench with use of mysl database](https://phoenixnap.com/kb/how-to-create-mysql-database-workbench) or [mySql server](https://www.educative.io/blog/what-are-database-schemas-examples) or phpMyAdmin from MAMP
+  - [x] GUI [Can use mysql workbench with use of mysl database](https://phoenixnap.com/kb/how-to-create-mysql-database-workbench) or [mySql server](https://www.educative.io/blog/what-are-database-schemas-examples) or phpMyAdmin from MAMP\
   - [x] Connect to MySQL server: phpMyAdmin from MAMP. Can also use smae phpMyAdmin to create db instead of using the GUI-mysqlWorkbench
     - [x] Create table(s).
     - [x] Add columns and [Choose their data types: check tooltip](https://stackoverflow.com/questions/3663952/what-do-column-flags-mean-in-mysql-workbench). [read article](https://dev.mysql.com/doc/workbench/en/wb-table-editor-columns-tab.html). [latitude, longitude datatype ? ](https://www.syntaxbook.com/post/3076O3-what-is-the-ideal-data-type-to-use-when-storing-latitude-longitudes-in-a-mysql-database)
@@ -34,19 +34,21 @@ As a kid, maybe you were collecting things. Sea shells, Pokemon cards, stamps, .
 
 ## Step 1: read
 
-- [ ] On the overview page, build an overview of everything in the collection (you will find some provided code that's helpful for this)
-
------END OF DAY 1----------
+- [x] On the overview page, build an overview of everything in the collection. (get all)
+- [?] Choose to show one - find - search
+  Qst: -about get one ? in a new form or inside the same submit form? or not ..
 
 ## Step 2: create
 
 - [ ] Build a form that contains all the relevant fields
+  - [x] Delete unnecessary fields by using tool icon next to table name in mySQL workbench -> Apply changes -> Refresh to reflect changes
+  - [?] Action field required
 - [ ] Once the form is submitted, save this info as a new entry in the database
 - [ ] In a real application, you'd validate all of the data. In this case it's optional: focus on the database parts first
 
 ## Step 3: update
 
-- [ ] Make a new page edit.php
+- [x] Make a new page edit.php
 - [ ] When clicking on an edit link for an entry, the edit page is loaded for that specific item
 - [ ] When the edit form is submitted, the relevant entry in the database is updated
 

@@ -13,6 +13,7 @@ class CardRepository
         $this->databaseManager = $databaseManager;
     }
 
+    
     public function create()
     {
 
