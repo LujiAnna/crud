@@ -29,11 +29,14 @@ class CardRepository
     // Get all
     public function get()
     {
-        // TODO: replace dummy data by real one
+        // replace dummy data by real one
         // query data from table using PDO 
 
         // if no parameter in query
-        $sql = "SELECT * FROM bird_base";
+        // $sql = "SELECT * FROM bird_base";
+        $sql = "SELECT comName FROM birds";
+
+        // $sql = "SELECT idbird, comName FROM bird";
         
         // $result = $pdo->query($sql);
         // this dbmgr is one which has the pdo-dsn 

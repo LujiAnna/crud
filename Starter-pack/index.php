@@ -20,7 +20,7 @@ $databaseManager->connect();
 // This example is about a Bird card collection
 // Update the naming if you'd like to work with another collection
 $cardRepository = new CardRepository($databaseManager);
-$cards = $cardRepository->get();
+$birds = $cardRepository->get();
 
 // Load your view
 // Tip: you can load this dynamically and based on a variable, if you want to load another view

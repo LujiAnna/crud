@@ -12,8 +12,10 @@
 <h1>Avicard - track your collection of Bird cards</h1>
 
 <ul>
-    <?php foreach ($cards as $card) : ?>
-        <li><?= $card['name'] ?></li>
+    <?php foreach ($birds as $bird) : ?>
+    <!-- MD array https://stackoverflow.com/questions/6413589/php-foreach-with-multidimensional-array/6413677 -->
+        <li><?= $bird['comName'] ?></li>
+
     <?php endforeach; ?>
 </ul>
 

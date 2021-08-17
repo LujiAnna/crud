@@ -43,6 +43,7 @@ class DatabaseManager
 
         // PDO will work on 12 different database systems
         // PDO is built-in  https://www.phptutorial.net/php-pdo/pdo-connecting-to-mysql/
+        // Try Catch to test connection
         //   try {
         //     //   dsn - database server name
         //       $dsn = "mysql:host=$this->host;dbname=$this->dbname";

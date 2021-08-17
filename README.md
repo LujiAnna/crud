@@ -29,8 +29,8 @@ As a kid, maybe you were collecting things. Sea shells, Pokemon cards, stamps, .
 
 ## How to connect to the db
 
-- [ ] Use class to get db into your project
-- [ ] Query data using File Script or mySQL Shell
+- [x] Use class to get db into your project
+- [x] Query data using File Script or mySQL Shell
 
 ## Step 1: read
 
