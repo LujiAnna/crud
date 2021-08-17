@@ -25,7 +25,7 @@ class DatabaseManager
 
     }
 
-    public function connect()
+    public function connect():PDO
     {
         // make the connection to the database
         // null will close the db
@@ -41,21 +41,26 @@ class DatabaseManager
         //   die("Connection failed: " . $conn->connect_error);
         //   }
 
-        // Connect using PDO (PHP Data Objects)
         // PDO will work on 12 different database systems
         // PDO is built-in  https://www.phptutorial.net/php-pdo/pdo-connecting-to-mysql/
-          try {
-            //   dsn - database server name
-              $dsn = "mysql:host=$this->host;dbname=$this->dbname";
-              $this->connection = new PDO($dsn, $this->user, $this->password);
-            // set the PDO error mode to exception
-            $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-           // set return type in form of 
-        //   $this->connection->setAttribute(PDO::FETCH_GROUP | PDO::FETCH_ASSOC);
-            echo "Connected successfully";
-          } catch(PDOException $e) {
-            echo "Connection failed: " . $e->getMessage();
-          }
+        //   try {
+        //     //   dsn - database server name
+        //       $dsn = "mysql:host=$this->host;dbname=$this->dbname";
+        //       $this->connection = new PDO($dsn, $this->user, $this->password);
+        //     // set the PDO error mode to exception
+        //     $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        // //   echo "Connected successfully";
+        //   } catch(PDOException $e) {
+        //     echo "Connection failed: " . $e->getMessage();
+        //   }
+
+            // Connect using PDO (PHP Data Objects)
+          //   dsn - database server name
+          $dsn = "mysql:host=$this->host;dbname=$this->dbname";
+          $this->connection = new PDO($dsn, $this->user, $this->password);
+          // set return type in form of associative array
+          $this->connection->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+          return $this->connection; 
 
     }
 }

@@ -18,6 +18,8 @@ class CardRepository
 
     }
 
+    // Get = read
+
     // Get one
     public function find()
     {
@@ -28,15 +30,26 @@ class CardRepository
     public function get()
     {
         // TODO: replace dummy data by real one
-        return [
-            ['name' => 'bird one'],
-            ['name' => 'bird two'],
-        ];
+        // query data from table using PDO 
+
+        // if no parameter in query
+        $sql = "SELECT * FROM bird_base";
+        
+        // $result = $pdo->query($sql);
+        // this dbmgr is one which has the pdo-dsn 
+        $result = $this->databaseManager->connect()->query($sql);
+        // return [
+        //     ['name' => 'bird one'],
+        //     ['name' => 'bird two'],
+        // ];
+
+        return $result;
 
         // We get the database connection first, so we can apply our queries with it
         // return $this->databaseManager->connection-> (runYourQueryHere)
     }
 
+    // update = edit
     public function update()
     {
 
