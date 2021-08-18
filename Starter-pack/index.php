@@ -26,6 +26,9 @@ $cardRepository = new CardRepository($databaseManager);
 $birds = $cardRepository->get();
 $searchResult = $cardRepository->find();
 $addBirdInfo = $cardRepository->create();
+$editBirdInfo = $cardRepository->update();
+$deleteBirdInfo = $cardRepository->delete();
+
 
 
 // Load your view

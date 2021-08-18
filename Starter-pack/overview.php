@@ -14,10 +14,13 @@
 <ul>
     <?php foreach ($birds as $bird) : ?>
     <!-- MD array https://stackoverflow.com/questions/6413589/php-foreach-with-multidimensional-array/6413677 -->
-        <li><?= $bird['comName'] ?></li>
-
+        <li><?= $bird['comName'] . ' <a href="edit.php?bird_id= $bird[\'idbird\']">Edit </a> ' . ' | ' . ' <a href="delete.php?bird_id= $bird[\'idbird\']">Delete</a> ';
+ ?></li>
     <?php endforeach; ?>
 </ul>
+
+<!-- . ' <a href="edit.php?edit_id='. $bird['idbird']"' -->
+
 
 <!-- create a form -->
 
@@ -34,6 +37,10 @@
     <label for="idbird">Bird id:</label>
   <input type="text" id="idbird" 
     name="idbird"><br><br>
+
+    <label for="birdRange">Number of birds:</label>
+  <input type="text" id="birdRange" 
+    name="birdRange"><br><br>
 
     <label for="idlocation">Location id:</label>
   <input type="text" id="idlocation" 
@@ -52,7 +59,7 @@
     name="locationLon"><br><br>
 
   <!-- <input type="submit" value="Submit Bird"> -->
-  <button type='submit' name='submit'>Submit bird info</button>
+  <button type='submit' name='add'>Submit bird info</button>
 </form>
 <!-- TODO: save info as a new entry in the db -->
 
@@ -69,7 +76,7 @@
 </form>
 
 <div>
-    <!-- Display full bird name  -->
+    <!-- Display full bird name from find/search -->
     <div>
         <ul>
         <?php if (isset($_POST['find'])) : ?>
@@ -77,7 +84,6 @@
         <li><?= $result ?></li>
     <?php endforeach; ?>
     <?php endif; ?>
-
 </ul>
 
 </div>

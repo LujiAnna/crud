@@ -42,20 +42,20 @@ As a kid, maybe you were collecting things. Sea shells, Pokemon cards, stamps, .
 
 - [x] Build a form that contains all the relevant fields
   - [x] Delete unnecessary fields by using tool icon next to table name in mySQL workbench -> Apply changes -> Refresh to reflect changes
-  - [?] Action field required
-- [ ] Once the form is submitted, save this info as a new entry in the database
+  - [?] Action field required - no
+- [x] Once the form is submitted, save this info as a new entry in the database
 - [!] In a real application, you'd validate all of the data. In this case it's optional: focus on the database parts first
 
 ## Step 3: update
 
 - [x] Make a new page edit.php
-- [ ] When clicking on an edit link for an entry, the edit page is loaded for that specific item
+- [x] When clicking on an edit link for an entry, the edit page is loaded for that specific item
 - [ ] When the edit form is submitted, the relevant entry in the database is updated
 
 ## Step 4: delete
 
 - [ ] Build a link to delete.php that will delete a specific product from the database
-      Afterwards, it will redirect to the overview
+- [ ] Afterwards, it will redirect to the overview
 
 ## Bonus rounds:
 

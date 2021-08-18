@@ -16,34 +16,34 @@ class CardRepository
     public function create()
     {
         // grab this variable from post
-        if (isset($_POST['submit'])) {
+        if (isset($_POST['add'])) {
         
-            // pass bird info in the db
-                $comName = $_POST['comName'];
-                $sciName = $_POST['sciName'];
-                $idbird = $_POST['idbird'];
-                $birdRange = $_POST['birdRange'];
-                $idlocation = $_POST['idlocation'];
-                $locationName = $_POST['locationName'];
-                $locationLat = $_POST['locationLat'];
-                $locationLat = $_POST['locationLon'];
+        // pass bird info in the db
+            $comName = $_POST['comName'];
+            $sciName = $_POST['sciName'];
+            $idbird = $_POST['idbird'];
+            $birdRange = $_POST['birdRange'];
+            $idlocation = $_POST['idlocation'];
+            $locationName = $_POST['locationName'];
+            $locationLat = $_POST['locationLat'];
+            $locationLat = $_POST['locationLon'];
+
+            // insert into two different tables, with 1 common value
+            $sql = "INSERT INTO birds (idbird, comName, sciName, birdRange, idlocation)
+                VALUES (\"$idbird\", \"$comName\", \"$sciName\",\"$birdRange\", \"$idlocation\")";
+            var_dump($sql);
+
+            $result = $this->databaseManager->connection->query($sql);
+            // var_dump($result);
+            // return $result;
 
                 // insert into two different tables, with 1 common value
-                $sql = "INSERT INTO birds (idbird, comName, sciName, birdRange, idlocation)
-                 VALUES (\"$idbird\", \"$comName\", \"$sciName\",\"$birdRange\", \"$idlocation\")";
-                var_dump($sql);
+                $sql1 = "INSERT INTO locations (idlocation, locationName, locationLat, locationLon)
+                VALUES (\"$idlocation\", \"$locationName\", \"$locationLat\",\"$locationLon\")";
+            var_dump($sql1);
 
-                $result = $this->databaseManager->connection->query($sql);
-                // var_dump($result);
-                // return $result;
-
-                 // insert into two different tables, with 1 common value
-                 $sql1 = "INSERT INTO locations (idlocation, locationName, locationLat, locationLon)
-                 VALUES (\"$idlocation\", \"$locationName\", \"$locationLat\",\"$locationLon\")";
-                var_dump($sql1);
-
-                $result = $this->databaseManager->connection->query($sql1);
-                echo 'OK';
+            $result = $this->databaseManager->connection->query($sql1);
+            echo 'OK';
     
     }
 
@@ -102,10 +102,29 @@ class CardRepository
     }
 
     // update = edit
+    // pass params $_POST['birdRangeEdit'], $_GET['bird_id']?
     public function update()
     {
-
+        // grab this variable from post
+        if (isset($_POST['edit'])) {
+        # Check if amount field is 0, empty, or not set at all'
+            if (empty($_POST['editBird'])) {
+                echo " <br/> Nothing was edited";
+        } else {
+            // pass this bird name to find its info in the db
+                $birdRangeEdit = $_POST['birdRangeEdit'];
+                $idbird = $_GET['bird_id'];
+                $sql = "UPDATE birds
+                SET birdRange= $birdRangeEdit;
+                WHERE idbird = $idbird";
+                var_dump($sql);
+                // use fetch method
+                // $result = $this->databaseManager->connection->query($sql);
+                // var_dump($result);
+                return $result;
+            }
     }
+}
 
     public function delete()
     {
