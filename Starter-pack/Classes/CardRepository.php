@@ -22,18 +22,27 @@ class CardRepository
                 $comName = $_POST['comName'];
                 $sciName = $_POST['sciName'];
                 $idbird = $_POST['idbird'];
+                $birdRange = $_POST['birdRange'];
                 $idlocation = $_POST['idlocation'];
                 $locationName = $_POST['locationName'];
                 $locationLat = $_POST['locationLat'];
-                $locationLon = $_POST['locationLon'];
+                $locationLat = $_POST['locationLon'];
 
                 // insert into two different tables, with 1 common value
-                $sql = "INSERT INTO birds (idbird, comName, sciName, birdRange, idLocation)
-                 VALUES (\"$comName\", \"$sciName\", \"$idbird\", \"$idlocation\")";
+                $sql = "INSERT INTO birds (idbird, comName, sciName, birdRange, idlocation)
+                 VALUES (\"$idbird\", \"$comName\", \"$sciName\",\"$birdRange\", \"$idlocation\")";
                 var_dump($sql);
-                // $result = $this->databaseManager->connection->query($sql);
+
+                $result = $this->databaseManager->connection->query($sql);
                 // var_dump($result);
                 // return $result;
+
+                 // insert into two different tables, with 1 common value
+                 $sql1 = "INSERT INTO locations (idlocation, locationName, locationLat, locationLon)
+                 VALUES (\"$idlocation\", \"$locationName\", \"$locationLat\",\"$locationLon\")";
+                var_dump($sql1);
+
+                $result = $this->databaseManager->connection->query($sql1);
                 echo 'OK';
     
     }
